@@ -1,9 +1,14 @@
-function TodoList({ todos }) {
+function TodoList({ todos, setTodos }) {
+  function handleToggleTodo(todo) {
+
+  }
+
   return (
     <ul>
       {todos.map((todo, index) => (
         <li
           key={index}
+          onClick={() => handleToggleTodo(todo)}
           style={{
             textDecoration: todo.done ? "line-through" : "",
           }}
