@@ -1,4 +1,8 @@
-function AddTodo() {
+import React from "react";
+
+function AddTodo({ setTodos }) {
+  const inputRef = React.useRef();
+
   function handleAddTodo(event) {
     event.preventDefault();
     const text = event.target.elements.addTodo.value;
@@ -8,10 +12,11 @@ function AddTodo() {
       text,
       done: false,
     };
+    setTodos((prevTodos) => prevTodos.concat(todo));
   }
   return (
     <form onSubmit={handleAddTodo}>
-      <input name="addTodo" placeholder="Add todo" />
+      <input name="addTodo" placeholder="Add todo" ref={inputRef} />
       <button type="submit">Submit</button>
     </form>
   );
