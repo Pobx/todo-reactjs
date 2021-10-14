@@ -13,6 +13,7 @@ function AddTodo({ setTodos }) {
       done: false,
     };
     setTodos((prevTodos) => prevTodos.concat(todo));
+    inputRef.current.value = '';
   }
   return (
     <form onSubmit={handleAddTodo}>
