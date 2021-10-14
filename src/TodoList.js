@@ -1,6 +1,7 @@
 function TodoList({ todos, setTodos }) {
   function handleToggleTodo(todo) {
-
+    const updatedtods = todos.map((item) => item.id === todo.id? {...item, done: !item.done} : item);
+    setTodos(updatedtods);
   }
 
   return (
