@@ -7,7 +7,7 @@ function AddTodo({ setTodos }) {
     event.preventDefault();
     const text = event.target.elements.addTodo.value;
     const todo = {
-      id: 4,
+      id: Math.random(),
       text,
       done: false,
     };
