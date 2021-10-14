@@ -1,6 +1,10 @@
+import DeleteTodo from "./DeleteTodo";
+
 function TodoList({ todos, setTodos }) {
   function handleToggleTodo(todo) {
-    const updatedtods = todos.map((item) => item.id === todo.id? {...item, done: !item.done} : item);
+    const updatedtods = todos.map((item) =>
+      item.id === todo.id ? { ...item, done: !item.done } : item
+    );
     setTodos(updatedtods);
   }
 
@@ -15,6 +19,7 @@ function TodoList({ todos, setTodos }) {
           }}
         >
           Id: {todo.id} text: {todo.text} done: {todo.done}
+          <DeleteTodo todo={todo} setTodos={setTodos} />
         </li>
       ))}
     </ul>
